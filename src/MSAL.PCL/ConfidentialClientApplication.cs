@@ -114,6 +114,18 @@ namespace Microsoft.Identity.Client
         }
 
         /// <summary>
+        /// AcquireTokenByAuthorizationCodeAsync
+        /// </summary>
+        public async Task<AuthenticationResult> AcquireTokenByAuthorizationCodeAsync(
+            string authorizationCode, string[] scope, string redirectUri)
+        {
+            return
+                await
+                    this.AcquireTokenByAuthorizationCodeCommonAsync(
+                        authorizationCode, scope, new Uri(redirectUri)).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// AcquireTokenForClient
         /// </summary>
         public async Task<AuthenticationResult> AcquireTokenForClientAsync(string[] scope)
