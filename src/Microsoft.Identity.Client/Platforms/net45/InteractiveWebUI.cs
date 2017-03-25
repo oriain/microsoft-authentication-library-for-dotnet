@@ -44,7 +44,7 @@ namespace Microsoft.Identity.Client
         {
             AuthorizationResult result;
 
-            using (dialog = new WindowsFormsWebAuthenticationDialog(this.OwnerWindow, RequestContext))
+            using (dialog = new WindowsFormsWebAuthenticationDialog(this.OwnerWindow))
             {
                 result = dialog.AuthenticateAAD(this.RequestUri, this.CallbackUri);
             }
